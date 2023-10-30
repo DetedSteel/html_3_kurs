@@ -2,7 +2,9 @@
 
 $green: #B9FF66;
 $dark: #191A23;
+$dark_second: #292A32;
 $light: #F3F3F3;
+$gray: #898989;
 
 @mixin cards_sec_2($bg_c, $h_bg_c, $a_c) {
   background-color: $bg_c;
@@ -534,6 +536,214 @@ h2 {
       display: flex;
       justify-content: space-between;
       width: 564px;
+    }
+  }
+}
+
+.section_9 {
+  margin-top: 140px;
+
+  header {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 80px;
+
+    p {
+      font-size: 18px;
+      width: 323px;
+    }
+  }
+
+  form {
+    padding: 60px 100px 80px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: flex-start;
+    background-image: url(../img/section9_ill.svg);
+    background-repeat: no-repeat;
+    background-position-x: 785px;
+    background-position-y: 100px;
+    background-size: 50%;
+
+    label {
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .radio {
+      display: flex;
+      gap: 35px;
+
+      .custom_radio {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+      }
+  
+      .custom_r_label {
+        font-size: 18px;
+      }
+  
+      .custom_radio+.custom_r_label {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+  
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 28px;
+          height: 28px;
+          border: 1px solid black;
+          border-radius: 1px;
+          border-radius: 100%;
+          margin-right: 14px;
+        }
+      }
+  
+      .custom_radio:checked+.custom_r_label::before {
+        background-image: url(../img/radio.svg);
+        background-position: center center;
+      }
+    }
+
+    .input_text {
+      width: 556px;
+      padding: 18px 30px;
+      border-radius: 14px;
+      border: 1px solid #000;
+      outline: none;
+      font-size: 18px;
+      font-weight: 400;
+
+      &::placeholder {
+        color: $gray
+      }
+    }
+
+    button {
+      width: 556px;
+      padding: 20px 35px;
+      background-color: $dark;
+      color: white;
+      border-radius: 14px;
+    }
+  }
+}
+
+footer {
+  padding: 55px 60px 50px 60px;
+  border-radius: 45px 45px 0px 0px;
+  margin-top: 140px;
+  background-color: $dark;
+  display: grid;
+
+  nav {
+    grid-row: 1;
+    grid-column: 1/3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      height: 29px;
+    }
+  
+    ul {
+      display: flex;
+      gap: 20px;
+
+      &:first-of-type {
+        gap: 40px;
+      }
+
+      a {
+        color: white;
+        text-decoration: underline;
+        font-size: 18px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  article {
+    margin-top: 66px;
+    margin-bottom: 50px;
+    grid-row: 2;
+
+    h3 {
+      font-size: 20px;
+      font-weight: 500;
+      padding: 0px 7px;
+      background-color: $green;
+      border-radius: 7px;
+      width: fit-content;
+      margin-bottom: 27px;
+    }
+
+    p {
+      color: white;
+      margin-bottom: 20px;
+
+      &:last-of-type {
+        max-width: 332px;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  form {
+    margin-top: 66px;
+    margin-bottom: 50px;
+    grid-row: 2;
+    padding: 58px 40px;
+    background-color: $dark_second;
+    display: flex;
+    gap: 20px;
+    border-radius: 14px;
+    justify-content: center;
+
+    input {
+      width: 285px;
+      padding: 22px 35px;
+      border-radius: 14px;
+      border: 1px solid #FFF;
+      color: white;
+      font-size: 18px;
+      font-weight: 400;
+      background-color: $dark_second;
+    }
+
+    button {
+      padding: 20px 35px;
+      border-radius: 14px;
+      background-color: $green;
+      font-weight: 400;
+      line-height: 28px;
+      font-size: 20px;
+    }
+  }
+
+  section {
+    grid-row: 3;
+    grid-column: 1/3;
+    padding-top: 50px;
+    border-top: 1px solid white;
+    display: flex;
+    gap: 40px;
+
+    p {
+      color: white;
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    a {
+      color: white;
+      font-size: 18px;
+      line-height: 28px;
+      text-decoration: underline;
     }
   }
 }
