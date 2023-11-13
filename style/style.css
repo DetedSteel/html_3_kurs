@@ -84,7 +84,7 @@ h2 {
   }
 }
 
-.section_1_text {
+.section_1 section:first-of-type {
   display: grid;
   grid-template-columns: 530px 600px;
   grid-template-rows: 231px 112px 108px;
@@ -93,42 +93,42 @@ h2 {
   margin-bottom: 70px;
 }
 @media screen and (max-width: 430px) {
-  .section_1_text {
+  .section_1 section:first-of-type {
     grid-template-columns: 390px;
     grid-template-rows: auto auto auto auto;
   }
 }
-.section_1_text img {
+.section_1 section:first-of-type img {
   grid-row: 1/4;
   grid-column: 2;
 }
 @media screen and (max-width: 430px) {
-  .section_1_text img {
+  .section_1 section:first-of-type img {
     grid-column: 1;
     grid-row: 2;
     width: 360px;
   }
 }
-.section_1_text h1 {
+.section_1 section:first-of-type h1 {
   font-size: 60px;
   font-weight: 500;
 }
 @media screen and (max-width: 430px) {
-  .section_1_text h1 {
+  .section_1 section:first-of-type h1 {
     font-size: 43px;
   }
 }
-.section_1_text p {
+.section_1 section:first-of-type p {
   font-size: 20px;
   line-height: 28px;
 }
 @media screen and (max-width: 430px) {
-  .section_1_text p {
+  .section_1 section:first-of-type p {
     font-size: 16px;
     line-height: 24px;
   }
 }
-.section_1_text button {
+.section_1 section:first-of-type button {
   padding: 20px 35px;
   background-color: #191a23;
   color: white;
@@ -138,30 +138,35 @@ h2 {
   margin-bottom: 40px;
 }
 @media screen and (max-width: 430px) {
-  .section_1_text button {
+  .section_1 section:first-of-type button {
     width: 390px;
   }
 }
-
-.logos {
+@media screen and (max-width: 430px) {
+  .section_1 section:last-of-type {
+    width: 430px;
+    overflow: hidden;
+    margin-left: -20px;
+  }
+}
+.section_1 section:last-of-type ul {
   display: flex;
   justify-content: space-between;
   margin-bottom: 140px;
   filter: grayscale(100%);
 }
 @media screen and (max-width: 430px) {
-  .logos {
+  .section_1 section:last-of-type ul {
     width: 550px;
-    overflow-x: hidden;
     height: 117px;
     flex-wrap: wrap;
-    margin-left: -82px;
+    margin-left: -60px;
     margin-bottom: 60px;
   }
-  .logos li:first-of-type {
+  .section_1 section:last-of-type ul li:first-of-type {
     margin-left: 82px;
   }
-  .logos li:last-of-type {
+  .section_1 section:last-of-type ul li:last-of-type {
     margin-right: 82px;
   }
 }
@@ -705,6 +710,11 @@ h2 {
   display: grid;
   grid-template-columns: repeat(3, 387px);
   gap: 40px;
+}
+@media screen and (max-width: 430px) {
+  .section_6 section {
+    grid-template-columns: 390px;
+  }
 }
 .section_6 section article {
   border-radius: 45px;
