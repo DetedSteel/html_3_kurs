@@ -605,7 +605,7 @@ h2 {
 @media screen and (max-width: 430px) {
   .section_4 section div {
     animation-name: slideLeft2;
-    animation-duration: 10s;
+    animation-duration: 20s;
     animation-timing-function: linear;
     animation-delay: 0;
     animation-iteration-count: infinite;
