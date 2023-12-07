@@ -10,6 +10,7 @@
 body {
   margin: 0 auto;
   max-width: 1240px;
+  position: relative;
 }
 @media screen and (max-width: 430px) {
   body {
@@ -65,6 +66,10 @@ h2 {
   .main_header {
     margin-top: 30px;
     margin-bottom: 40px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 20px;
+    overflow-x: hidden;
   }
 }
 
@@ -163,23 +168,149 @@ h2 {
 }
 .section_1 section:last-of-type ul {
   display: flex;
-  justify-content: space-between;
   margin-bottom: 140px;
+  justify-content: center;
   filter: grayscale(100%);
 }
+
+.section4__mobile {
+  display: none;
+}
 @media screen and (max-width: 430px) {
-  .section_1 section:last-of-type ul {
-    width: 550px;
-    height: 117px;
-    flex-wrap: wrap;
-    margin-left: 0;
-    margin-bottom: 60px;
+  .section4__mobile {
+    display: block;
   }
-  .section_1 section:last-of-type ul li:first-of-type {
-    margin-left: 102px;
+}
+
+.mobileMenu {
+  display: none;
+  transition: right 1s linear;
+}
+@media screen and (max-width: 430px) {
+  .mobileMenu {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -225px;
   }
-  .section_1 section:last-of-type ul li:last-of-type {
-    margin-right: 102px;
+}
+@media screen and (max-width: 430px) {
+  .mobileMenu__links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    box-shadow: -5px -9px 5px #f3f3f3, -5px 9px 5px #f3f3f3;
+    background-color: white;
+    padding: 50px 30px 30px 30px;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 430px) {
+  .mobileMenu__btn {
+    padding: 15px 20px;
+    border: 1px solid #191a23;
+    border-radius: 10px;
+    margin-top: 35px;
+  }
+}
+.mobileMenu__close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-497px);
+  }
+}
+@keyframes slideRight {
+  from {
+    transform: translateX(-497px);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes slideLeft2 {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-1200px);
+  }
+}
+.burger {
+  display: none;
+}
+@media screen and (max-width: 430px) {
+  .burger {
+    display: block;
+  }
+}
+
+.logos {
+  gap: 86px;
+}
+@media screen and (max-width: 430px) {
+  .logos {
+    flex-direction: column;
+    width: 547px;
+  }
+}
+.logos__container {
+  display: flex;
+}
+@media screen and (max-width: 430px) {
+  .logos__container:first-of-type {
+    animation-name: slideLeft;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+  }
+}
+@media screen and (max-width: 430px) {
+  .logos__container:last-of-type {
+    animation-name: slideRight;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+  }
+}
+.logos__container:last-of-type .logos__container_mobile {
+  margin-right: 92px;
+  margin-left: 0;
+}
+.logos__container:last-of-type .logos__container_desctop {
+  margin-right: 38px;
+  margin-left: 0;
+}
+.logos__container_desctop {
+  gap: 86px;
+  display: flex;
+}
+@media screen and (max-width: 430px) {
+  .logos__container_desctop {
+    margin-left: 92px;
+    gap: 38px;
+  }
+}
+.logos__container_mobile {
+  gap: 80px;
+  display: none;
+}
+@media screen and (max-width: 430px) {
+  .logos__container_mobile {
+    display: flex;
+    margin-left: 38px;
+    gap: 38px;
   }
 }
 
@@ -412,6 +543,11 @@ h2 {
   }
 }
 
+@media screen and (max-width: 430px) {
+  .section_4 {
+    margin-bottom: 60px;
+  }
+}
 .section_4 header {
   display: flex;
   align-items: center;
@@ -451,10 +587,32 @@ h2 {
 }
 @media screen and (max-width: 430px) {
   .section_4 section {
-    margin-bottom: 60px;
+    padding: 0;
+    background-color: #f3f3f3;
+    overflow-x: hidden;
+    width: 390px;
+    margin: 0 auto;
+    justify-content: center;
+    border-radius: 0;
+    display: block;
+    padding-left: 20px;
   }
 }
-.section_4 section article {
+.section_4 section div {
+  display: flex;
+  gap: 50px;
+}
+@media screen and (max-width: 430px) {
+  .section_4 section div {
+    animation-name: slideLeft2;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    background-color: transparent;
+  }
+}
+.section_4 section div article {
   width: 350px;
   padding-right: 64px;
   border-right: 1px solid white;
@@ -463,35 +621,37 @@ h2 {
   gap: 20px;
   padding-bottom: 20px;
 }
-.section_4 section article:nth-child(2n) {
+.section_4 section div article:nth-child(2n) {
   padding-left: 64px;
   width: 414px;
 }
-.section_4 section article:last-child {
+.section_4 section div article:last-child {
   padding-right: 0;
   padding-left: 64px;
   border: none;
 }
 @media screen and (max-width: 430px) {
-  .section_4 section article {
+  .section_4 section div article {
     border: none;
     padding: 0;
-  }
-  .section_4 section article:not(:first-child) {
-    display: none;
+    background-color: #191a23;
+    padding: 42px 50px !important;
+    width: 350px !important;
+    border-radius: 25px;
   }
 }
-.section_4 section article p {
+.section_4 section div article p {
   color: white;
   font-size: 18px;
 }
 @media screen and (max-width: 430px) {
-  .section_4 section article p {
+  .section_4 section div article p {
     font-size: 16px;
     line-height: 24px;
+    width: 250px !important;
   }
 }
-.section_4 section article a {
+.section_4 section div article a {
   color: #b9ff66;
   display: flex;
   gap: 15px;
@@ -549,6 +709,11 @@ h2 {
   display: flex;
   align-items: center;
   gap: 25px;
+}
+@media screen and (max-width: 430px) {
+  .section_5 section article {
+    width: 100%;
+  }
 }
 .section_5 section article:first-child {
   background-color: #b9ff66;
@@ -719,6 +884,7 @@ h2 {
 @media screen and (max-width: 430px) {
   .section_6 button {
     width: 390px;
+    align-self: center;
   }
 }
 .section_6 section {
